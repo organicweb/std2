@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index, :view]
   # GET /posts
   # GET /posts.json
   def index
