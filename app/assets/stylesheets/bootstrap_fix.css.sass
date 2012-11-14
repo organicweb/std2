@@ -1,0 +1,81 @@
+// Imports
+@import compass/css3
+
+// Couleurs 
+
+$primary: #313131
+
+// Espacement de la navbar
+.row:first-child
+	padding-top: 70px
+
+// Navigation
+// Je passe la navigation en noir
+.navbar-inner
+	background: $primary
+	height: 42px
+
+// Je modifie le reste
+.navbar
+	.brand
+		color: white
+		text-shadow: none
+		background: darken($primary, 5%)
+		+transition-timing-function(ease-in-out)
+		+transition-duration(.2s)
+		+transition-property(all)
+		&:hover
+			color: white
+			background: black
+// Allez on extends (poil dans la main)
+	.nav,
+		>li
+			>a
+				@extend .brand
+				background: none
+// Boutons
+.btn-mini
+	margin: .5em 0
+// Ajout de bordure en plus histoire d'habiller un peu
+.table
+	td
+		border-right: 1px solid lighten(gray, 40%)
+		border-spacing: 2px
+		&:last-child
+			border-right: 0
+
+// Forms
+.form-horizontal
+	background: lighten(gray, 48%)
+	padding: .7em 0
+	margin: 0 0 0 0
+
+// Sidebar
+
+// On met la sidebar en fixed
+.sidebar-nav
+	position: fixed
+	margin: 1em 0
+
+// On skin le titre de la sidebar
+.sidebar-nav
+	h3
+		margin: 0 0 100px 0
+		padding: .5em 0
+		line-height: 1
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		font-size: 1.2em
+		text-align: center
+		background: $primary
+		color: white
+		+border-top-left-radius(4px)
+		+border-top-right-radius(4px)
+		boder-bottom: 1px solid white
+	.nav-list
+		overflow: hidden
+		margin: 1.5em 0 0 0
+
+
